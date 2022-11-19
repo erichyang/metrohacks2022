@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "live": "nodemon index.js",
+    "tailwind": "npx tailwindcss -i ./site/main.css -o ./site/main_tailwind.css ",
+    "watch_tailwind": "npx tailwindcss -i ./site/main.css -o ./site/main_tailwind.css  --watch"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}
