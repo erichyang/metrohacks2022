@@ -23,7 +23,7 @@
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: items // JSON.stringify(items)
+                body: JSON.stringify(items)
             })
             let data = await response.json()
             console.log(data)
