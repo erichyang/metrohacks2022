@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main_tailwind.css">
+</head>
+<body>
+    <h1 class="font-bold text-[5em] font-sans">yep</h1>
+    <textarea id="subjects" class="border-pink-500 border-8 border-solid">fsdsdffsd</textarea>
+    <button onclick="uploadSubjects()" class="bg-blue-300">upload</button>
+
+    <script>
+        async function uploadSubjects ()
+        {
+            let items = document.getElementById("subjects").value.split("\n")
+
+            let respose = await fetch("http://localhost:5000/uploadStudyGuide", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: items // JSON.stringify(items)
+            })
+            let data = await response.json()
+            console.log(data)
+
+            //let respose = await fetch("/comparison")
+            //let data = await response.json()
+
+        }
+    </script>
+</body>
+</html>
